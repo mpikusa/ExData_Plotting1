@@ -16,14 +16,13 @@ limitedData$Global_reactive_power <- as.numeric(as.character(limitedData$Global_
 
 png(file="plot4.png", width = 480, height = 480)
 par(mfrow=c(2, 2))
-#first
-
-plot(x = limitedData$Time, y = limitedData$Global_active_power, type="l",  ylab = "Global Active Power")
 
 
+#Global Active Power
+plot(x = limitedData$Time, y = limitedData$Global_active_power, type="l",  ylab = "Global Active Power", xlab="")
 
-#Volage
-plot(x = limitedData$Time, y = limitedData$Voltage, type="l", ylab = "Voltage", xlab = "daytime")
+#Voltage
+plot(x = limitedData$Time, y = limitedData$Voltage, type="l", ylab = "Voltage", xlab = "datetime")
 
 #Energy sub metering
 maxy = max(max(limitedData$Sub_metering_3), max(limitedData$Sub_metering_2), max(limitedData$Sub_metering_1))
@@ -35,5 +34,5 @@ legend("topright", pch =  1, col=c("black", "red", "blue"), legend=c("Sub_meteri
 
 #reactive
 
-plot(x = limitedData$Time, y = limitedData$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab = "daytime")
+plot(x = limitedData$Time, y = limitedData$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab = "datetime")
 dev.off() 
